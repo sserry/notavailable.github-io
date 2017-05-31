@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+		<title>a Memo</title>
+		<style>
+		p{
+			font-family:"PingFang SC",Georgia,Serif;
+			font-size: 11pt;
+			font-weight: 800;
+			color: #F36A8A
+		}
+		.inbedSpan {
+			font-family:"PingFang SC",Georgia,Serif;
+			font-size: 11pt;
+			font-weight: 200;
+			color: #F36A8A
+		}
+		.daysCount {
+			font-family:"LiSong Pro",Georgia,Serif;
+			font-size: 2.7rem;
+			/*font-weight: 200;*/
+			color: #F36A8A;
+
+			position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+		}
+		.Bg1 {
+			 width: 100%;
+			 position: relative;
+			text-align: center;
+			vertical-align:middle;
+			/*background-image: url(note.png);
+			background-repeat:no-repeat;
+			background-position:center;*/
+		}
+		</style>
+	</head>
+	<body style="background-color: #fac9cc; text-align: center">
+		<p style="width: 78%; padding-left: 11%; padding-top: 20px">「我的小心思都向往着你呀，不对着你的时候，所有的乐趣都是复习与你在一起的时光」</p>
+		<img src="main1.png" style="width: 100%; height: 100%"></img>
+		<p>SJT & ZLM <span class='inbedSpan'>已共同走过</span></p>
+		<div class="Bg1">
+		<img src="note.png" style="width: 100%; height: 100%"/>
+		<span class="daysCount" id="daysCountLabel">
+
+		</span>
+				</div>
+	</body>
+
+	<script>
+		window.onload = function() {
+
+			var curDate = new Date();
+
+			var curDateTmStp = Date.parse(curDate.toDateString());
+
+			curDate.setFullYear(2017);
+			curDate.setMonth(4);
+			curDate.setDate(1);
+
+			var startDateTmStp = Date.parse(curDate.toDateString())
+
+			var dura = curDateTmStp - startDateTmStp;
+			var days = dura / 3600 / 24 / 1000;
+
+			var daysCountStr = days + ' Days';
+
+			var daysLabel = document.getElementById('daysCountLabel');
+			daysLabel.innerHTML = daysCountStr;
+
+		}
+
+	</script>
+</html>
